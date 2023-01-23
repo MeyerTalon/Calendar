@@ -5,8 +5,18 @@
 var currentDate = dayjs().format('dddd, MMMM D');
 var currentHour = parseInt(dayjs().format('H'));
 
+// localStorage.setItem('Info-9', '');
+// localStorage.setItem('Info-10', '');
+// localStorage.setItem('Info-11', '');
+// localStorage.setItem('Info-12', '');
+// localStorage.setItem('Info-1', '');
+// localStorage.setItem('Info-2', '');
+// localStorage.setItem('Info-3', '');
+// localStorage.setItem('Info-4', '');
+// localStorage.setItem('Info-5', '');
+
+
 var eventInfo9 = localStorage.getItem('Info-9');
-$('#hour-9').children('textarea').val(eventInfo9);
 var eventInfo10 = localStorage.getItem('Info-10');
 var eventInfo11 = localStorage.getItem('Info-11');
 var eventInfo12 = localStorage.getItem('Info-12');
@@ -16,6 +26,35 @@ var eventInfo3 = localStorage.getItem('Info-3');
 var eventInfo4 = localStorage.getItem('Info-4');
 var eventInfo5 = localStorage.getItem('Info-5');
 
+if (eventInfo9 !== null) {
+    eventInfo9 = eventInfo9.substring(1, eventInfo9.length - 1);
+}
+if (eventInfo10 !== null) {
+    eventInfo10 = eventInfo10.substring(1, eventInfo10.length - 1);
+}
+if (eventInfo11 !== null) {
+    eventInfo11 = eventInfo11.substring(1, eventInfo11.length - 1);
+}
+if (eventInfo12 !== null) {
+    eventInfo12 = eventInfo12.substring(1, eventInfo12.length - 1);
+}
+if (eventInfo1 !== null) {
+    eventInfo1 = eventInfo1.substring(1, eventInfo1.length - 1);
+}
+if (eventInfo2 !== null) {
+    eventInfo2 = eventInfo2.substring(1, eventInfo2.length - 1);
+}
+if (eventInfo3 !== null) {
+    eventInfo3 = eventInfo3.substring(1, eventInfo3.length - 1);
+}
+if (eventInfo4 !== null) {
+    eventInfo4 = eventInfo4.substring(1, eventInfo4.length - 1);
+}
+if (eventInfo5 !== null) {
+    eventInfo5 = eventInfo5.substring(1, eventInfo5.length - 1);
+}
+
+
 $(function () {
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
@@ -24,15 +63,23 @@ $(function () {
     // time-block containing the button that was clicked? How might the id be
     // useful when saving the description in local storage?
     //
-    
+
+    $('#hour-9').children('textarea').val(eventInfo9);
+    $('#hour-10').children('textarea').val(eventInfo10);
+    $('#hour-11').children('textarea').val(eventInfo11);
+    $('#hour-12').children('textarea').val(eventInfo12);
+    $('#hour-13').children('textarea').val(eventInfo1);
+    $('#hour-14').children('textarea').val(eventInfo2);
+    $('#hour-15').children('textarea').val(eventInfo3);
+    $('#hour-16').children('textarea').val(eventInfo4);
+    $('#hour-17').children('textarea').val(eventInfo5);
+
     var saveBtn9 = $('#hour-9').children('.saveBtn');
     saveBtn9.on('click', function(event) {
         event.stopPropagation();
         var userInput = $('#hour-9').children('textarea').val();
         userInput = JSON.stringify(userInput);
-        localStorage.setItem('Info-9', userInput)
-        console.log(userInput);
-        //save to local storage
+        localStorage.setItem('Info-9', userInput);
     });
 
     var saveBtn10 = $('#hour-10').children('.saveBtn');
@@ -40,8 +87,7 @@ $(function () {
         event.stopPropagation();
         var userInput = $('#hour-10').children('textarea').val();
         userInput = JSON.stringify(userInput);
-        console.log(userInput);
-        //save to local storage
+        localStorage.setItem('Info-10', userInput);
     });
 
     var saveBtn11 = $('#hour-11').children('.saveBtn');
@@ -49,8 +95,7 @@ $(function () {
         event.stopPropagation();
         var userInput = $('#hour-11').children('textarea').val();
         userInput = JSON.stringify(userInput);
-        console.log(userInput);
-        //save to local storage
+        localStorage.setItem('Info-11', userInput);
     });
 
     var saveBtn12 = $('#hour-12').children('.saveBtn');
@@ -58,53 +103,47 @@ $(function () {
         event.stopPropagation();
         var userInput = $('#hour-12').children('textarea').val();
         userInput = JSON.stringify(userInput);
-        console.log(userInput);
-        //save to local storage
+        localStorage.setItem('Info-12', userInput);
     });
 
-    var saveBtn1 = $('#hour-1').children('.saveBtn');
+    var saveBtn1 = $('#hour-13').children('.saveBtn');
     saveBtn1.on('click', function(event) {
         event.stopPropagation();
-        var userInput = $('#hour-1').children('textarea').val();
+        var userInput = $('#hour-13').children('textarea').val();
         userInput = JSON.stringify(userInput);
-        console.log(userInput);
-        //save to local storage
+        localStorage.setItem('Info-1', userInput);
     });
 
-    var saveBtn2 = $('#hour-2').children('.saveBtn');
+    var saveBtn2 = $('#hour-14').children('.saveBtn');
     saveBtn2.on('click', function(event) {
         event.stopPropagation();
-        var userInput = $('#hour-2').children('textarea').val();
+        var userInput = $('#hour-14').children('textarea').val();
         userInput = JSON.stringify(userInput);
-        console.log(userInput);
-        //save to local storage
+        localStorage.setItem('Info-2', userInput);
     });
 
-    var saveBtn3 = $('#hour-3').children('.saveBtn');
+    var saveBtn3 = $('#hour-15').children('.saveBtn');
     saveBtn3.on('click', function(event) {
         event.stopPropagation();
-        var userInput = $('#hour-3').children('textarea').val();
+        var userInput = $('#hour-15').children('textarea').val();
         userInput = JSON.stringify(userInput);
-        console.log(userInput);
-        //save to local storage
+        localStorage.setItem('Info-3', userInput);
     });
 
-    var saveBtn4 = $('#hour-4').children('.saveBtn');
+    var saveBtn4 = $('#hour-16').children('.saveBtn');
     saveBtn4.on('click', function(event) {
         event.stopPropagation();
-        var userInput = $('#hour-4').children('textarea').val();
+        var userInput = $('#hour-16').children('textarea').val();
         userInput = JSON.stringify(userInput);
-        console.log(userInput);
-        //save to local storage
+        localStorage.setItem('Info-4', userInput);
     });
 
-    var saveBtn5 = $('#hour-5').children('.saveBtn');
+    var saveBtn5 = $('#hour-17').children('.saveBtn');
     saveBtn5.on('click', function(event) {
         event.stopPropagation();
-        var userInput = $('#hour-5').children('textarea').val();
+        var userInput = $('#hour-17').children('textarea').val();
         userInput = JSON.stringify(userInput);
-        console.log(userInput);
-        //save to local storage
+        localStorage.setItem('Info-5', userInput);
     });
 
 
