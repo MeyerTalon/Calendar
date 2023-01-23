@@ -3,7 +3,12 @@
 // in the html.
 
 var currentDate = dayjs().format('dddd, MMMM D');
-var currentHour = dayjs().format('h');
+var currentHour = parseInt(dayjs().format('h'));
+
+if (currentHour > 12) {
+    currentHour -= 12;
+}
+
 $(function () {
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
@@ -23,7 +28,16 @@ $(function () {
     // past, present, and future classes? How can Day.js be used to get the
     // current hour in 24-hour time?
     //
-    
+
+    // Calls the checkTime() method for each event.
+    var hour = 9;
+    for (var i = 1; i <= 9; i++) {
+        if (hour === 13) {
+            hour -= 12;
+        }
+        checkTime(hour);
+        hour++;
+    }
 
     // TODO: Add code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. HINT: How can the id
@@ -31,6 +45,30 @@ $(function () {
     //
     // TODO: Add code to display the current date in the header of the page.
     $('.date').text(currentDate);
+
+    // Checks the current time of the given event, compares it to the current hour,
+    // and sets class to past, present, or future accordingly.
+    // Note this only works with the 9AM-5PM schedule. 
+    function checkTime(givenHour) {
+
+        var eventEl = $("#hour-" + givenHour);
+        var eventHourText = $(eventEl).text();
+        var eventHour = parseInt(eventHourText);
+
+        if (eventHour < 9) {
+            eventHour += 12;
+        }
+    
+        if (eventHour > currentHour) {
+            eventEl.addClass('future');
+        } else if (eventHour < currentHour) {
+            console.log('test')
+            eventEl.addClass('past');
+        } else {
+            eventEl.addClass('present');
+        }
+    
+        return;
+    }
   });
-  
   
