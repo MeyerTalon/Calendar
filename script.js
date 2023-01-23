@@ -6,6 +6,7 @@ var currentDate = dayjs().format('dddd, MMMM D');
 var currentHour = parseInt(dayjs().format('H'));
 
 var eventInfo9 = localStorage.getItem('Info-9');
+$('#hour-9').children('textarea').val(eventInfo9);
 var eventInfo10 = localStorage.getItem('Info-10');
 var eventInfo11 = localStorage.getItem('Info-11');
 var eventInfo12 = localStorage.getItem('Info-12');
@@ -29,7 +30,7 @@ $(function () {
         event.stopPropagation();
         var userInput = $('#hour-9').children('textarea').val();
         userInput = JSON.stringify(userInput);
-        eventInfo9 = 
+        localStorage.setItem('Info-9', userInput)
         console.log(userInput);
         //save to local storage
     });
