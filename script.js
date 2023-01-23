@@ -17,11 +17,89 @@ $(function () {
     // time-block containing the button that was clicked? How might the id be
     // useful when saving the description in local storage?
     //
-
-    var saveBtn = $('.saveBtn');
-    saveBtn.on('click', function() {
-        // Save event to local storage
+    
+    var saveBtn9 = $('#hour-9').children('.saveBtn');
+    saveBtn9.on('click', function(event) {
+        event.stopPropagation();
+        var userInput = $('#hour-9').children('textarea').val();
+        userInput = JSON.stringify(userInput);
+        console.log(userInput);
+        //save to local storage
     });
+
+    var saveBtn10 = $('#hour-10').children('.saveBtn');
+    saveBtn10.on('click', function(event) {
+        event.stopPropagation();
+        var userInput = $('#hour-10').children('textarea').val();
+        userInput = JSON.stringify(userInput);
+        console.log(userInput);
+        //save to local storage
+    });
+
+    var saveBtn11 = $('#hour-11').children('.saveBtn');
+    saveBtn11.on('click', function(event) {
+        event.stopPropagation();
+        var userInput = $('#hour-11').children('textarea').val();
+        userInput = JSON.stringify(userInput);
+        console.log(userInput);
+        //save to local storage
+    });
+
+    var saveBtn12 = $('#hour-12').children('.saveBtn');
+    saveBtn12.on('click', function(event) {
+        event.stopPropagation();
+        var userInput = $('#hour-12').children('textarea').val();
+        userInput = JSON.stringify(userInput);
+        console.log(userInput);
+        //save to local storage
+    });
+
+    var saveBtn1 = $('#hour-1').children('.saveBtn');
+    saveBtn1.on('click', function(event) {
+        event.stopPropagation();
+        var userInput = $('#hour-1').children('textarea').val();
+        userInput = JSON.stringify(userInput);
+        console.log(userInput);
+        //save to local storage
+    });
+
+    var saveBtn2 = $('#hour-2').children('.saveBtn');
+    saveBtn2.on('click', function(event) {
+        event.stopPropagation();
+        var userInput = $('#hour-2').children('textarea').val();
+        userInput = JSON.stringify(userInput);
+        console.log(userInput);
+        //save to local storage
+    });
+
+    var saveBtn3 = $('#hour-3').children('.saveBtn');
+    saveBtn3.on('click', function(event) {
+        event.stopPropagation();
+        var userInput = $('#hour-3').children('textarea').val();
+        userInput = JSON.stringify(userInput);
+        console.log(userInput);
+        //save to local storage
+    });
+
+    var saveBtn4 = $('#hour-4').children('.saveBtn');
+    saveBtn4.on('click', function(event) {
+        event.stopPropagation();
+        var userInput = $('#hour-4').children('textarea').val();
+        userInput = JSON.stringify(userInput);
+        console.log(userInput);
+        //save to local storage
+    });
+
+    var saveBtn5 = $('#hour-5').children('.saveBtn');
+    saveBtn5.on('click', function(event) {
+        event.stopPropagation();
+        var userInput = $('#hour-5').children('textarea').val();
+        userInput = JSON.stringify(userInput);
+        console.log(userInput);
+        //save to local storage
+    });
+
+
     // TODO: Add code to apply the past, present, or future class to each time
     // block by comparing the id to the current hour. HINTS: How can the id
     // attribute of each time-block be used to conditionally add or remove the
@@ -31,7 +109,7 @@ $(function () {
 
     // Calls the checkTime() method for each event.
     var hour = 9;
-    for (var i = 1; i <= 9; i++) {
+    for (var i = 0; i < 9; i++) {
         if (hour === 13) {
             hour -= 12;
         }
@@ -62,7 +140,6 @@ $(function () {
         if (eventHour > currentHour) {
             eventEl.addClass('future');
         } else if (eventHour < currentHour) {
-            console.log('test')
             eventEl.addClass('past');
         } else {
             eventEl.addClass('present');
