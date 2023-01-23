@@ -3,11 +3,17 @@
 // in the html.
 
 var currentDate = dayjs().format('dddd, MMMM D');
-var currentHour = parseInt(dayjs().format('h'));
+var currentHour = parseInt(dayjs().format('H'));
 
-if (currentHour > 12) {
-    currentHour -= 12;
-}
+var eventInfo9 = localStorage.getItem('Info-9');
+var eventInfo10 = localStorage.getItem('Info-10');
+var eventInfo11 = localStorage.getItem('Info-11');
+var eventInfo12 = localStorage.getItem('Info-12');
+var eventInfo1 = localStorage.getItem('Info-1');
+var eventInfo2 = localStorage.getItem('Info-2');
+var eventInfo3 = localStorage.getItem('Info-3');
+var eventInfo4 = localStorage.getItem('Info-4');
+var eventInfo5 = localStorage.getItem('Info-5');
 
 $(function () {
     // TODO: Add a listener for click events on the save button. This code should
@@ -23,6 +29,7 @@ $(function () {
         event.stopPropagation();
         var userInput = $('#hour-9').children('textarea').val();
         userInput = JSON.stringify(userInput);
+        eventInfo9 = 
         console.log(userInput);
         //save to local storage
     });
@@ -110,9 +117,9 @@ $(function () {
     // Calls the checkTime() method for each event.
     var hour = 9;
     for (var i = 0; i < 9; i++) {
-        if (hour === 13) {
-            hour -= 12;
-        }
+        // if (hour === 13) {
+        //     hour -= 12;
+        // }
         checkTime(hour);
         hour++;
     }
@@ -126,7 +133,6 @@ $(function () {
 
     // Checks the current time of the given event, compares it to the current hour,
     // and sets class to past, present, or future accordingly.
-    // Note this only works with the 9AM-5PM schedule. 
     function checkTime(givenHour) {
 
         var eventEl = $("#hour-" + givenHour);
