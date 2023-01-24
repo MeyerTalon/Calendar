@@ -29,8 +29,9 @@ $(function () {
     // Adds click event to the clear schedule button which clears the 
     // local storage and schedule
     $('#clear-btn').click(function() {
-        localStorage.clear();
+        // localStorage.clear();
         for (var i = 9; i <= 17; i++) {
+            localStorage.removeItem('hour-' + i);
             $('#hour-' + i).children('textarea').val('');
         }
     })
