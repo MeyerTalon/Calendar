@@ -1,4 +1,4 @@
-// Initialize the date variables that will be used
+// Initialize the date and hour variables that will be used
 var currentDate = dayjs().format('dddd, MMMM D');
 var currentHour = parseInt(dayjs().format('H'));
 
@@ -34,7 +34,7 @@ $(function () {
             $('#hour-' + i).children('textarea').val('');
         }
     })
-    
+
     // Checks the current time of the given event, compares it to the current hour,
     // and sets class to past, present, or future accordingly.
     function checkTime(givenHour) {
