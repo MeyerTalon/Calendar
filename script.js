@@ -2,6 +2,21 @@
 var currentDate = dayjs().format('dddd, MMMM D');
 var currentHour = parseInt(dayjs().format('H'));
 
+// Clears the work schedule when a new day begins
+var today;
+if (today !== currentDate) {
+    localStorage.removeItem('Info-9');
+    localStorage.removeItem('Info-10');
+    localStorage.removeItem('Info-11');
+    localStorage.removeItem('Info-12');
+    localStorage.removeItem('Info-1');
+    localStorage.removeItem('Info-2');
+    localStorage.removeItem('Info-3');
+    localStorage.removeItem('Info-4');
+    localStorage.removeItem('Info-5');
+    today === currentDate;
+}
+
 // Initilize all the necesary local storage items
 var eventInfo9 = localStorage.getItem('Info-9');
 var eventInfo10 = localStorage.getItem('Info-10');
@@ -154,4 +169,4 @@ $(function () {
         return;
     }
   });
-  
+
