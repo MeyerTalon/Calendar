@@ -7,6 +7,8 @@ based on the current time of day. For the most part this was created as an excer
 
 ## Screenshot
 ![Scheduler](./SchedulerScreenshot.png)
+Note that this screenshot was taken after the completion of the workday, meaning all the 
+events are color coded to indicate the past. 
 
 ## Link to Deployed Page
 https://meyertalon.github.io/Calendar/
